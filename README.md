@@ -9,6 +9,8 @@
 - 本地优先：字幕、摘要和对话缓存在本机 IndexedDB，无后端、无账号、无遥测。
 - 悬浮窗：可拖动、可缩放、记住位置，跟随 B 站亮暗主题。
 
+> 说明：本项目主要由 AI 编程助手构建，作者负责需求、设计与验收。
+
 ## 快速开始
 
 从 [Releases](https://github.com/rhyme-sun/video-summarizer-for-bilibili/releases/latest) 下载最新的 zip。压缩包里是构建好的扩展，不需要安装 Node.js，也不需要自己构建。

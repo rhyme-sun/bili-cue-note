@@ -1,0 +1,55 @@
+{
+  "name": "bilicuenote",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "BiliCueNote — B 站视频摘要、完整字幕与对话（Manifest V3，自带 API Key）",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhyme-sun/video-summarizer-for-bilibili.git"
+  },
+  "homepage": "https://github.com/rhyme-sun/video-summarizer-for-bilibili#readme",
+  "bugs": {
+    "url": "https://github.com/rhyme-sun/video-summarizer-for-bilibili/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "icons": "node scripts/render-icons.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package": "node scripts/package.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "idb": "^8.0.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "spark-md5": "^3.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/chrome": "^0.3.7",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/spark-md5": "^3.0.5",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "playwright-core": "^1.64.1",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

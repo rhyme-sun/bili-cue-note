@@ -1,0 +1,232 @@
+@import 'tailwindcss';
+@import '../../styles/tokens.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tailwind utilities read their initial values from `@property` registrations.
+   Chromium ignores `@property` rules that live in a shadow-root stylesheet, and
+   Tailwind's own fallback sits behind an `@supports` gate that modern Chromium
+   no longer matches. Without these seeds, `border`, `divide-*`, `shadow-*`,
+   `ring-*`, `space-y-*`, and transform utilities compute to nothing inside the
+   panel — the window then has no edge at all against Bilibili's white page.
+   Declaring them unconditionally in the lowest-priority layer restores the
+   behaviour; utilities still override them on the elements that set a value. */
+@layer properties {
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-translate-z: 0;
+    --tw-rotate-x: initial;
+    --tw-rotate-y: initial;
+    --tw-rotate-z: initial;
+    --tw-skew-x: initial;
+    --tw-skew-y: initial;
+    --tw-space-y-reverse: 0;
+    --tw-divide-y-reverse: 0;
+    --tw-border-style: solid;
+    --tw-leading: initial;
+    --tw-font-weight: initial;
+    --tw-tracking: initial;
+    --tw-ordinal: initial;
+    --tw-slashed-zero: initial;
+    --tw-numeric-figure: initial;
+    --tw-numeric-spacing: initial;
+    --tw-numeric-fraction: initial;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-color: initial;
+    --tw-shadow-alpha: 100%;
+    --tw-inset-shadow: 0 0 #0000;
+    --tw-inset-shadow-color: initial;
+    --tw-inset-shadow-alpha: 100%;
+    --tw-ring-color: initial;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-inset-ring-color: initial;
+    --tw-inset-ring-shadow: 0 0 #0000;
+    --tw-ring-inset: initial;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-outline-style: solid;
+    --tw-blur: initial;
+    --tw-brightness: initial;
+    --tw-contrast: initial;
+    --tw-grayscale: initial;
+    --tw-hue-rotate: initial;
+    --tw-invert: initial;
+    --tw-opacity: initial;
+    --tw-saturate: initial;
+    --tw-sepia: initial;
+    --tw-drop-shadow: initial;
+    --tw-drop-shadow-color: initial;
+    --tw-drop-shadow-alpha: 100%;
+    --tw-drop-shadow-size: initial;
+    --tw-backdrop-blur: initial;
+    --tw-backdrop-brightness: initial;
+    --tw-backdrop-contrast: initial;
+    --tw-backdrop-grayscale: initial;
+    --tw-backdrop-hue-rotate: initial;
+    --tw-backdrop-invert: initial;
+    --tw-backdrop-opacity: initial;
+    --tw-backdrop-saturate: initial;
+    --tw-backdrop-sepia: initial;
+    --tw-duration: initial;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-scale-z: 1;
+  }
+}
+
+:host {
+  all: initial;
+  color-scheme: light dark;
+  font-family: var(--font-sans);
+}
+
+.bb-root {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-autospace: normal;
+  line-break: strict;
+}
+
+.bb-root.dark {
+  color-scheme: dark;
+}
+
+.bb-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(120, 120, 120, 0.32) transparent;
+  overscroll-behavior: contain;
+}
+
+.bb-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.bb-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(120, 120, 120, 0.32);
+}
+
+.bb-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.5);
+}
+
+.bb-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes bb-window-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bb-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bb-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+@keyframes bb-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.bb-window {
+  animation: bb-window-in 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bb-entry {
+  animation: bb-pop-in 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bb-progress-indeterminate {
+  animation: bb-indeterminate 1.2s ease-in-out infinite;
+}
+
+.bb-caret {
+  animation: bb-caret 1s steps(2, start) infinite;
+}
+
+.bb-dot-flash {
+  animation: bb-pop-in 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bb-message-actions {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.bb-message:hover .bb-message-actions,
+.bb-message:focus-within .bb-message-actions {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .bb-message-actions {
+    opacity: 1;
+  }
+}
+
+.bb-highlight {
+  background: var(--color-brand-soft);
+  box-shadow: inset 3px 0 0 var(--color-brand);
+}
+
+/* Keep the popover's outline and elevation explicit so they do not depend on
+   the utility classes that were unreliable inside the shadow root. */
+.bb-citation-popover {
+  border: 1px solid var(--color-line-strong);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 12px 32px -6px rgba(0, 0, 0, 0.26),
+    0 2px 8px -2px rgba(0, 0, 0, 0.12);
+}
+
+.bb-focus-ring:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-brand) 55%, transparent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-window,
+  .bb-entry,
+  .bb-progress-indeterminate,
+  .bb-caret,
+  .bb-dot-flash {
+    animation: none;
+  }
+}

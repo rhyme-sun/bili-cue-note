@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="BiliCueNote">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFA6C2" />
+      <stop offset="1" stop-color="#FB7299" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#B84066" flood-opacity=".28" />
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#bg)" />
+  <path
+    d="M46 26H82C91.9 26 100 34.1 100 44V70C100 79.9 91.9 88 82 88H68L50 104C48.2 105.5 46 104.1 46 101.8V88C36.1 88 28 79.9 28 70V44C28 34.1 36.1 26 46 26Z"
+    fill="#fff"
+    filter="url(#shadow)"
+  />
+  <polygon
+    points="56,50 56,74 76,62"
+    fill="#FB7299"
+    stroke="#FB7299"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+</svg>

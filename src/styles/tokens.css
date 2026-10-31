@@ -1,0 +1,86 @@
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-surface-muted: #f4f4f5;
+  --color-surface-sunken: #fafafa;
+  --color-line: #e4e4e7;
+  --color-line-subtle: #f1f1f3;
+  --color-line-strong: #a1a1aa;
+  --color-fg: #18181b;
+  --color-fg-muted: #52525b;
+  --color-fg-subtle: #a1a1aa;
+  --color-brand: #fb7299;
+  --color-brand-strong: #e85588;
+  --color-brand-soft: #fff0f5;
+  --color-on-brand: #ffffff;
+  --color-warning-bg: #fffbeb;
+  --color-warning-line: #fde68a;
+  --color-warning-fg: #92400e;
+  --color-danger-bg: #fef2f2;
+  --color-danger-line: #fecaca;
+  --color-danger-fg: #b91c1c;
+  --color-success-bg: #ecfdf5;
+  --color-success-line: #a7f3d0;
+  --color-success-fg: #047857;
+
+  --radius-panel: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-surface: #0b0b0f;
+    --color-surface-raised: #16161b;
+    --color-surface-muted: #232329;
+    --color-surface-sunken: #101014;
+    --color-line: #2f2f37;
+    --color-line-subtle: #222228;
+    --color-line-strong: #52525b;
+    --color-fg: #f4f4f5;
+    --color-fg-muted: #a1a1aa;
+    --color-fg-subtle: #71717a;
+    --color-brand: #fb7299;
+    --color-brand-strong: #ff8db0;
+    --color-brand-soft: #3a1c27;
+    --color-on-brand: #2a0a14;
+    --color-warning-bg: #2a1f0a;
+    --color-warning-line: #713f12;
+    --color-warning-fg: #fcd34d;
+    --color-danger-bg: #2a1113;
+    --color-danger-line: #7f1d1d;
+    --color-danger-fg: #fca5a5;
+    --color-success-bg: #06251c;
+    --color-success-line: #065f46;
+    --color-success-fg: #6ee7b7;
+  }
+}
+
+:root[data-theme='dark'],
+.bb-root.dark {
+  --color-surface: #0b0b0f;
+  --color-surface-raised: #16161b;
+  --color-surface-muted: #232329;
+  --color-surface-sunken: #101014;
+  --color-line: #2f2f37;
+  --color-line-subtle: #222228;
+  --color-line-strong: #52525b;
+  --color-fg: #f4f4f5;
+  --color-fg-muted: #a1a1aa;
+  --color-fg-subtle: #71717a;
+  --color-brand: #fb7299;
+  --color-brand-strong: #ff8db0;
+  --color-brand-soft: #3a1c27;
+  --color-on-brand: #2a0a14;
+  --color-warning-bg: #2a1f0a;
+  --color-warning-line: #713f12;
+  --color-warning-fg: #fcd34d;
+  --color-danger-bg: #2a1113;
+  --color-danger-line: #7f1d1d;
+  --color-danger-fg: #fca5a5;
+  --color-success-bg: #06251c;
+  --color-success-line: #065f46;
+  --color-success-fg: #6ee7b7;
+}

@@ -13,12 +13,12 @@
 
 ## 快速开始
 
-从 [Releases](https://github.com/rhyme-sun/video-summarizer-for-bilibili/releases/latest) 下载最新的 zip。压缩包里是构建好的扩展，不需要安装 Node.js，也不需要自己构建。
+从 [Releases](https://github.com/rhyme-sun/bili-cue-note/releases/latest) 下载最新的 zip。压缩包里是构建好的扩展，不需要安装 Node.js，也不需要自己构建。
 
 把下面这段话交给你的 AI 编程助手（Claude Code、Cursor、Codex 等），让它帮你装好：
 
 ```text
-请帮我安装 BiliCueNote：从 https://github.com/rhyme-sun/video-summarizer-for-bilibili/releases/latest 下载最新的 zip 并解压，然后在 Chrome 或 Edge 打开 chrome://extensions，开启开发者模式，点「加载已解压的扩展程序」，选择解压后的文件夹。能代劳的步骤直接完成，只有必须由我操作的浏览器界面再简短告诉我。装好后打开扩展设置页，提醒我填写 Base URL、API Key 和模型名。
+请帮我安装 BiliCueNote：从 https://github.com/rhyme-sun/bili-cue-note/releases/latest 下载最新的 zip 并解压，然后在 Chrome 或 Edge 打开 chrome://extensions，开启开发者模式，点「加载已解压的扩展程序」，选择解压后的文件夹。能代劳的步骤直接完成，只有必须由我操作的浏览器界面再简短告诉我。装好后打开扩展设置页，提醒我填写 Base URL、API Key 和模型名。
 ```
 
 首次使用，在设置页填写 OpenAI 兼容端点的 Base URL、API Key 和模型名即可，配置只保存在本机。保存时浏览器会请求该 API 域名的可选访问权限，用来绕过 CORS；点「测试连接」可以先验证配置。
